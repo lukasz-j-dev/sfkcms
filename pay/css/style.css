@@ -1,0 +1,144 @@
+.container
+{
+	width:572px;
+	margin:0 auto;
+}
+.header
+{
+	width:572px;
+	margin:0 auto;
+	background-color:#DC0300;
+	height:81px;
+}
+.logo
+{
+	margin:7px;
+	float:left;
+}
+.headerright
+{
+	float:left;
+	width: 476px;
+    text-align: center;
+}
+.headertxt
+{
+	font-size:14px;
+	font-family:Arial Bold;
+	color:white;
+	letter-spacing:-0.02px;
+}
+.headertxt2
+{
+	font-size:12px;
+	font-family:Arial Regular;
+	color:white;	
+	letter-spacing:0.3px;
+}
+.headertxt3
+{
+	font-size:8px;
+	font-family:Arial Regular;
+	color:white;	
+	letter-spacing:0.2px;
+}
+.headertxt4
+{
+	font-size:8px;
+	font-family:Arial Bold;
+	color:white;	
+	letter-spacing:0.47px;
+	font-weight:bold;
+}
+p 
+{
+	margin: 5px;
+}
+.headerqrcodesec1, .headerqrcodesec2, .headerqrcodesec3
+{
+	width:33.33%;
+	float:left;
+}
+.headerqrcode
+{
+	float:left;
+}
+.borderspan
+{
+	border:1px solid #000;
+}
+.borderspan p, .headerqrcodesec1 p
+{
+	font-size:12px;
+}
+.youmust
+{
+	color:#DB0301;
+	font-size:11px;
+	font-weight:bold;
+}
+p .arrow
+{
+	float:right;
+}
+.finedate
+{
+	background-color:#99C0E9;
+	text-align:center;
+	padding:5px;
+}
+.finedate .date, .finedate .amount
+{
+	font-size:20px;
+	font-weight:bold;
+}
+.visit
+{
+	font-size:11px;
+	font-weight:bold;
+	line-height:10px;
+}
+.carddetails
+{
+	font-size:9px;
+	font-weight:bold;
+}
+.scanqr
+{
+	font-size:9px;
+}
+.headerqrcodesec2
+{
+	text-align:center;
+}
+.address
+{
+	font-size:9px;
+}
+.redcolorbg
+{
+	background-color:#DC0300;
+}
+.clear
+{
+	clear:both;
+}
+.whitecolor
+{
+	color:white;
+}
+.redcolorbg p
+{
+	font-size:9px;
+	font-weight:bold;
+	padding:5px;
+}
+table td
+{
+	font-size:9px;
+	text-transform:uppercase;
+}
+.thead td 
+{
+	font-weight:bold;
+}

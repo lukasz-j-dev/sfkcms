@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Video Enforcement</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet" />
+	<style type="text/css">
+
+@font-face {
+font-family: Credit Card;
+src: url("/ticket/font/Credit_Card/CREDC___.ttf"),
+url("../font/Credit_Card/CREDC___.otf");
+}
+	
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }	
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #f1f1f1;
+}
+.container {
+	width: 612px;
+	background-color: #FFFFFF;
+	padding:20px;
+}
+.header {
+	margin:0 auto;
+	background-color: #DC0300;	
+}
+.col-md-12.logoimg {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 81px;
+}
+	
+.logo {	
+	float: left;
+    margin: 0;
+    position: absolute;
+    left: 20px;
+}
+p.automated-stop-sign  {
+	margin: 0 0 3px;
+	padding: 0px;
+	color: #FFFFFF;
+	font-family: Arial;
+	font-size: 14px;	
+	font-weight: bold;	
+	text-align: center;
+	letter-spacing: -0.02px;	
+	line-height: 16px;	
+}	
+p.village-of-great-neck {
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 14px;
+    text-align: center;
+}
+p.baker-hill-road {		
+	margin: 0px;
+	padding: 0px;	
+	color: #FFFFFF;	
+	font-family: Arial;	
+	font-size: 9px;	
+	letter-spacing: 0.2px;	
+	line-height: 18px;	
+	text-align: center;
+}
+
+
+
+.headerqrcode{
+	margin: 0px;
+	padding: 0px;
+}
+
+.notice-box .notice{
+	margin-top:22px;
+	padding: 2px!important;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    margin-left: 0px;
+}
+.notice p {
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    line-height: 14px;
+    white-space: nowrap;
+}
+
+.notice-box .notice span {
+    width: 95px;
+    display: inline-block;
+}
+.qr-code
+{
+	text-align: center;
+	padding-top: 40px;
+}
+
+p.address {
+   
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    letter-spacing: 1px;
+    line-height: 10px;
+}
+
+p.scanqr {
+    
+    color: #000000;
+    font-family: Arial;
+    font-size: 7px;
+    line-height: 8px;
+    text-align: center;
+    margin: 0 auto;
+}
+.name {
+    margin-top: 23px;
+    margin-left: 10px;
+}
+
+.you-must-pay{
+	margin-top:6px;
+	padding-left: 0px;
+}
+p.youmust {
+    color: #DB0301;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 12px;
+    margin-bottom: 0px;
+}
+.finedate{
+	background-color:rgba(153, 192, 233,0.6);
+	text-align:center;
+	padding:5px;
+	margin: 5px 0 5px 0;
+}
+.finedate h3 {
+	margin: 0 0 6px;
+	padding: 0px;
+	color: #000000;	
+	font-family: Arial;
+    font-size: 20px;	
+	font-weight: bold;	
+	letter-spacing: -0.21px;	
+	line-height: 30px;
+}
+.failure-to-stop {
+    background-color: #DC0300!important;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 7px;
+    font-weight: bold;
+    line-height: 7px;
+    padding: 4px 10px;
+
+    
+}
+.finedate p.visit {
+	margin: 0px;
+	padding:0px; 
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 10px;
+}
+.carddetails {
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 12px;
+    margin: 0 0 5px;
+}
+.violation-info {
+    border: 1px solid #000000;
+    margin-left: 0px;
+    padding: 7px;
+}
+.violation-info p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    line-height: 10px;
+    margin-bottom: 19px;
+}
+.violation-info span.count-of-violation-info-src {
+    border: 1px solid #000000;
+    padding: 3.5px 0px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin-right: 6px;
+    width: 19px;
+    display: inline-block;
+    text-align: center;
+}
+.violation-info span.second-step {
+    
+    color: #000000;
+    font-family: "Credit Card";
+    font-size: 7px;
+    font-weight: bold;
+    letter-spacing: 1.55px;
+    line-height: 9px;
+}
+.evidence p.info-about-evidence {
+    margin-top: 6px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+    margin-bottom: 15px;
+}
+.points-to-assess {
+    box-sizing: border-box;
+    border: 1px solid #000000;
+    padding: 79px 10px 0;
+    min-height: 190px;
+}
+.stub-notice p{
+	color: #FFFFFF;
+    font-family: Arial;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    line-height: 9px;
+    padding-top: 4px;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    background-color: #DC0300;
+    padding-right: 30px;
+}
+.payment-options p {
+    color: #000000;
+    font-family: "Arial Narrow";
+    font-size: 8px;
+    line-height: 10px;
+}
+ .due-date-fine-amount h3
+ { color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.21px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 1px!important;
+}
+p.second-row-of-due-date span {
+    color: #000000;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.15px;
+    line-height: 11px;
+    padding-right: 8px;
+}
+.violations {
+    margin-top: 7px;
+    margin-left: 15px;
+    margin-bottom: 22px;
+}
+.violation-info-table
+{
+	width: 100%!important;
+}
+.payable-check-info p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+}
+
+.padding-8 {
+    padding-left: 4px;
+    padding-right: 6px;
+}
+.padding-0{
+	padding: 0px;
+}
+.stub-notice, .stub{
+	display: inline-block;
+}
+ul.more-info-about-notice li span {
+    display: inline-block;
+}
+.padding-right0{
+	padding-right: 0px;
+}
+.padding-left0{
+	padding-left: 0px;
+}
+
+
+/*****************/
+.violations th,.footer-table th {
+    
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    padding-bottom: 4px;
+}
+.violations td,.footer-table td {
+   
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    /* font-weight: bold; */
+    line-height: 10px;
+    padding-right: 17px;
+}
+
+.violations td
+{
+padding-left:1px!important;
+}
+
+.violation-info p.view-images {
+    
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    text-align: center;
+    margin: 12px 6px 1px;
+}
+.violation-info p.steps-to-get-info {
+    margin-top: 13px;
+    margin-right: 4px;
+}
+
+.violation-info p.steps-to-get-info {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    line-height: 10px;
+    margin-bottocheck-infom: 24px!important;
+}
+
+.third-step
+{
+	margin-top:24px!important;
+}
+
+.points-to-assess p.points-will-be-note {
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 10px;
+}
+
+.divide 
+{	
+	box-sizing: border-box;	
+	
+	border: 1px dashed #979797;
+}
+.paying-or-contesting p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    line-height: 10px;
+    padding-top: 5px;
+    margin: 0 0 4px;
+}
+.stub-notice p.violation-stub {
+    height: 16px;
+    width: 209px;
+    background-color: #DC0300;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    line-height: 9px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+    /* padding-right: 30px; */
+}
+
+
+
+.stub p.stub-no {
+    color: #000000;
+    font-family: Credit Card;
+    font-size: 7px;
+    font-weight: 800;
+    margin-left: 51px;
+    letter-spacing: 1.55px;
+    line-height: 9px;
+}
+
+.col-md-4.notice-date-info p {
+   
+}
+.notice-date-info p {
+     height: 11px;
+    /* width: 52.59px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 11px;
+}
+ul.more-info-about-notice li {
+    
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 11px;
+}
+.Date-notice {
+    background-color: #FFF;
+    width: 31%;
+}
+.noticeDate, .noticeDate2 {
+    display: block;
+    background-color: #F3CBCB;
+    margin-left: 0px!important;
+    letter-spacing: 1.2px;
+}
+span.noticeDate, .noticeDate2 {
+    padding-top: 3px;
+    padding-left: 9px;
+    width: 60%;
+}
+img.arrow {
+    float: right;
+}
+.payable-to p.make-payment {
+    height: 9px;
+    width: 165px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+        margin-bottom: 5px!important;
+    }
+  .payable-to  p.Villagename {
+    height: 9px;
+    width: 104px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 9px;
+}
+  .payable-to p.post-address1 {
+ 
+
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 9px;
+    margin-bottom: 3px;
+}
+.payable-to p.great-neck {
+   
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 9px;
+}
+p.second-row-of-due-date {
+    margin-bottom: 5px!important;
+}
+
+.various-payment-methods p.pay-by-circle {
+    color: #000000;
+    font-family: "Arial Narrow";
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    text-align: right;
+}
+.various-payment-methods p.in-person {
+    color: #000000;
+    font-family: "Arial Narrow";
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 14px;
+    padding-top: 15px;
+    
+}
+.various-payment-methods p.in-person span {
+    display: inline-block;
+    float: left;
+}
+.various-payment-methods span.right-arrow-image {
+    padding-right: 4px;
+    padding-left:6px;
+}
+
+.various-payment-methods span.right-arrow-image2 {
+    padding-left: 2px;
+}
+.due-date-section p.total-amount-due {
+    background-color: #DC0300;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+    color: #fff;
+    /* padding-left: 3px; */
+    /* padding-top: 2px; */
+    padding: 2px 3px 2px 3px;
+}
+.main-div-of-notice-info ul.more-info-about-notice {
+    padding-left: 16px!important;
+}
+.main-div-of-notice-info ul.more-info-about-notice li {
+    list-style-type: none;
+}
+.col-md-4.due-date-section {
+    margin-top: -9px;
+}
+
+.col-md-4.due-date-section {
+    text-align: center;
+}
+.due-date-fine-amount span.feb {
+    color: #000000;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.15px;
+    line-height: 11px;
+    margin-left: 10px;
+}
+.due-date-fine-amount span.due-date-text {
+    color: #000000;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.15px;
+    line-height: 11px;
+}
+.due-date-fine-amount {
+    border: 1px solid #000000;
+    margin-top: -5px;
+}
+
+.notice-date-info span.noticeDate {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 12px;
+}
+table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding-top: 3px!important;
+    padding-right: 0px!important;
+    line-height: 1.42857143;
+    padding-left: 0px!important;
+    vertical-align: top;
+    border-top: none!important;
+
+}
+
+.third-section-of-footer.row {
+    padding-top: 8px;
+}
+.col-md-4.payable-check-info {
+    padding-top: 7px!important;
+}
+.col-md-8.payment-intructions p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 12px;
+   
+}
+.col-md-8.payment-intructions {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+img.creditcard-img {
+    padding-top: 9px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+/* Safari and Chrome */
+::i-block-chrome,.right-arrow-image2
+	{
+		margin-top: -20px;
+		margin-left: 80%;
+	}
+}
+
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<div class="row">
+<div class="col-md-12 logoimg"><img class="logo" src="images/logo.png" />
+<p class="automated-stop-sign">AUTOMATED STOP SIGN ENFORCEMENT VIOLATION</p>
+
+<p class="village-of-great-neck">VILLAGE OF GREAT NECK</p>
+
+<p class="baker-hill-road">61 BAKER HILL ROAD &bull; GREAT NECK,11023<br />
+<strong>VIDEOENFORCEMENT.COM</strong></p>
+</div>
+</div>
+</div>
+<!--end of header-->
+
+<div class="headerqrcode">
+<div class="row">
+<div class="col-md-4 notice-box">
+<div class="notice">
+<p class="notice-date"><span>Notice Date:</span> Oct 06 2019</p>
+
+<p class="violation-number"><span>Violation Number:</span> 1910060000</p>
+
+<p class="pin-number"><span>Pin Number:</span> 883</p>
+</div>
+
+<div class="name">
+<p class="address">JOHN DOE<br />
+123 SAMPLE AVE<br />
+NEW YORK, NY 11023</p>
+</div>
+</div>
+<!--notice-box-->
+
+<div class="col-md-4 qr-code"><img class="qrcode" src="images/QR Code.png" />
+<p class="scanqr">Scan code with your mobile<br />
+camera to view &amp; pay ticket online.</p>
+</div>
+<!--qr-code-->
+
+<div class="col-md-4 you-must-pay">
+<p class="youmust">YOU MUST PAY OR CONTEST BY <img class="arrow" src="images/Arrow.png" /></p>
+&nbsp;
+
+<div class="finedate">
+<h3>FEB 23 2020<br />
+$50.00</h3>
+
+<p class="visit">VISIT VIDEOENFORCEMENT.COM/PAY</p>
+</div>
+
+<p class="carddetails">Payment can be made online by credit card or debit card.<span><img class="creditcard-images" src="images/card-svg1.svg" width="94px" /></span></p>
+</div>
+</div>
+<!--row--></div>
+<!--End of headercode-->
+
+<div class="failure-to-stop">FAILURE TO STOP AT A TRAFFIC SIGNAL - NO POINTS</div>
+
+<div class="violations">
+<table class="violation-info-table">
+	<tbody>
+		<tr>
+			<th>VIOLATION</th>
+			<th>PLATE</th>
+			<th>STATE</th>
+			<th>TYPE</th>
+			<th>DATE</th>
+			<th>TIME</th>
+			<th>CODE</th>
+			<th>LOCATION</th>
+		</tr>
+		<tr>
+			<td>1910060000</td>
+			<td>HKV3140</td>
+			<td>NY</td>
+			<td>PAS</td>
+			<td>SEP 16 19</td>
+			<td>08:47 PM</td>
+			<td>STOP SIGN</td>
+			<td>10 BYRON LN - 11023</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<!--end of class violations-->
+
+<div class="evidence">
+<div class="row1">
+<div class="col-md-4 padding-0">
+<div class="evidence-image"><img class="evidenceimg" src="images/12080180.png" /></div>
+</div>
+
+<div class="col-md-4 padding-8">
+<div class="violation-info">
+<p style="text-align: center;"><b>You can view full color images<br />
+and video for this violation at</b></p>
+
+<p><span class="count-of-violation-info-src">1</span><b>VIDEOENFORCEMENT.COM</b></p>
+
+<p><span class="count-of-violation-info-src">2</span><b>ENTER</b><span class="second-step"><b> 1910060000-883</b></span></p>
+
+<p><span class="count-of-violation-info-src">3</span><b>PAY OR CONTEST TICKET</b></p>
+<img class="evidenceimg" src="images/card-svg1.svg" width="146px" /></div>
+</div>
+
+<div class="col-md-4 padding-0">
+<div class="points-to-assess">
+<p class="points-will-be-note">Points will not be assessed against the<br />
+registered owner or the designated driver for this violation.</p>
+</div>
+</div>
+</div>
+<!--End of row of evedence-->
+
+<div class="clearfix"></div>
+
+<p class="info-about-evidence">These recorded images and videos are evidence of a violation of failure to stop at a stop sign. Please note, the vehicle identified above bears a license plate registered or leased in your name. All registered owners are legally responsible for this violation. If you believe the license plate displayed in the photo above is not registered to you, please contact XX</p>
+</div>
+<!--End of evedence-->
+
+<div class="divide"></div>
+
+<div class="paying-or-contesting">
+<p><b>PAYING OR CONTESTING BY MAIL: </b>TO ENSURE PROPER CREDIT PLEASE RETURN THIS STUB WITH YOUR PAYMENT.</p>
+</div>
+
+<div class="main-class-notice-of-stub">
+<div class="stubBymail">
+<div class="row">
+<div class="col-md-8">
+<div class="stub-notice">
+<p>NOTICE OF VIOLATION STUB BY MAIL</p>
+</div>
+
+<div class="stub">
+<p class="stub-no">1910060000-883</p>
+</div>
+</div>
+
+<div class="col-md-4 notice-date-info">
+<div class="main-div-of-notice-info row">
+<ul class="more-info-about-notice">
+	<li class="notice-date-info"><span class="Date-notice">Notice Date:</span> <span class="noticeDate">10/6/2019</span></li>
+	<li class="notice-date-info"><span class="Date-notice">Violation:</span> <span class="noticeDate2 violation-notice-number">1910060000-883</span></li>
+</ul>
+</div>
+</div>
+</div>
+<!--end notice-info-row--></div>
+
+<div class="second-section row">
+<div class="col-md-8 pay">
+<div class="row">
+<div class="col-md-8 payment-options padding-right0">
+<p>Please fill in the <b>PAY</b> circle if you would like to pay this ticket by check</p>
+
+<p><b>OR</b></p>
+
+<p>You may choose to contest and request a <b>in-person hearing</b></p>
+</div>
+
+<div class="col-md-4 various-payment-methods padding-0">
+<p class="pay-by-circle">PAY<span class="right-arrow-image"><img src="images/right-arrow.png" /></span><span class="oval"><img src="images/Oval.png" /></span></p>
+
+<p class="in-person"><span>REQUEST IN-PERSON<br />
+HEARING DATE</span> <span class="right-arrow-image2"><img src="images/right-arrow.png" /> <img src="images/Oval.png" /></span></p>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 due-date-section">
+<p class="total-amount-due">TOTAL AMOUNT DUE<br />
+<span style="font-size:7px;">FOR THE TICKET LISTED ON THIS NOTICE</span></p>
+
+<div class="due-date-fine-amount">
+<h3>$50.00</h3>
+
+<p class="second-row-of-due-date"><span>DUE DATE</span><span>FEB 2020</span></p>
+</div>
+</div>
+</div>
+<!--End of second-section row-->
+
+<div class="third-section-of-footer row">
+<div class="col-md-8 third-section-info">
+<div class="row">
+<div class="col-md-7 footer-table">
+<table class="footer-notice-info table">
+	<tbody>
+		<tr>
+			<th>TICKET</th>
+			<th>PLATE</th>
+			<th>STATE</th>
+			<th>DATE</th>
+		</tr>
+		<tr>
+			<td>1910060000</td>
+			<td>HKV3140</td>
+			<td class="ny">NY</td>
+			<td>SEP 16 19</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<!--end-of footer-table-->
+
+<div class="col-md-1"></div>
+</div>
+<!-- end of row --></div>
+<!----end-of third-section-info-->
+
+<div class="col-md-4 payable-check-info">
+<p>Make check payable to:<br />
+<b>VILLAGE OF GREAT NECK</b></p>
+
+<p><b>P.O. BOX 2222<br />
+GREAT NECK ,NY 11021</b></p>
+</div>
+</div>
+<!--End of third-section-of-footer-div-->
+
+<div class="fourth-section-of-div row">
+<div class="col-md-8 video-and-imginfo">
+<div class="col-md-8 payment-intructions">
+<p>SEE VIDEO OR PHOTOS OR PAY BY CREDIT<br />
+CARD NOW AT VIDEOENFORCEMENT.COM/PAY</p>
+</div>
+
+<div class="col-md-2"><img class="creditcard-img" src="images/card-svg1.svg" width="94px" /></div>
+</div>
+</div>
+<!--fourth-section-of-div row--></div>
+<!--end of main-row-of-notice-stub--></div>
+<!--End of Container--><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script></body>
+</html>

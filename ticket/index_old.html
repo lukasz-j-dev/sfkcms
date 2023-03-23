@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Video Enforcement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<meta charset="utf-8">
+<style>
+	
+
+	.container {
+	height: 792px;
+	width: 612px;
+	background-color: #FFFFFF;
+	padding:20px 20px 0px;
+}
+.header {
+	height: 81px;
+	width: 572px;
+	margin:0 auto;
+	background-color: #DC0300;
+	
+}
+	
+.logo {	
+	float:left;
+	height: 70px;	
+	width: 70px;
+	margin:3px 9px 8px;
+	
+}
+/*.headertxt
+{
+	float: left;
+	margin-left: 25px;
+}*/
+p.automated-stop-sign  {
+	    height: fit-content;
+    margin: 5px auto;
+   color: #FFFFFF;
+	font-family: Arial;
+	font-size: 14px;	
+	font-weight: bold;	
+	text-align: center;
+	letter-spacing: -0.02px;	
+	line-height: 16px;
+	margin-bottom: 5px!important;
+
+	
+	
+}	
+p.village-of-great-neck {
+   
+    margin: auto;
+    height: 14px;
+    width: 157px;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    line-height: 14px;
+    text-align: center;
+    margin-bottom: 5px!important;
+}
+p.baker-hill-road 
+{	
+	height: 9px;	
+	width: 189px;	
+	color: #FFFFFF;	
+	font-family: Arial;	
+	font-size: 9px;	
+	letter-spacing: 0.2px;	
+	line-height: 9px;	
+	text-align: center;
+	margin-bottom: 5px!important;
+	margin: auto;
+}
+.video-enforcement-com 
+{	
+	height: 9px;	
+	width: 117px;	
+	color: #FFFFFF;	
+	font-family: Arial;	
+	font-size: 8px;	
+	font-weight: bold;	
+	letter-spacing: 0.47px;	
+	line-height: 9px;	
+	text-align: center;
+	margin:auto;
+}
+
+/*.notice-box,.qr-code,.you-must-pay
+{
+width:33.33%;
+	float:left;
+}*/
+.qr-code
+{
+	text-align: center;
+	padding-top: 40px;
+}
+
+.notice p
+{
+	margin-bottom:5px!important;
+}
+.notice-box .notice
+{
+	margin-top:22px;
+	padding: 2px!important;
+    box-sizing: border-box;
+    height: 47px; 
+     width: 180px; 
+    border: 1px solid #000000;
+    margin-left: 15px;
+}
+.notice p.notice-date {
+    /* height: 10px; */
+    /* width: 63px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    line-height: 10px;
+}
+p.violation-number {
+    height: 10px;
+    /* width: 90px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    line-height: 10px;
+}
+p.pin-number {
+    height: 10px;
+    /* width: 62px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.7px;
+    line-height: 10px;
+}
+.notice p.notice-date {
+    height: 10px;
+    /* width: 63px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    line-height: 10px;
+}
+span.date-of-notice {
+    height: 10px;
+    /* width: 91px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 10px;
+    margin-left: 28px;
+}
+span.pin {
+    height: 10px;
+    width: 22px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 10px;
+    margin-left: 27px;
+}
+p.address {
+    height: 43px;
+    width: 175px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    letter-spacing: 1px;
+    line-height: 10px;
+}
+.name {
+   
+    height: 43px;
+    width: 175px;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+p.scanqr {
+    
+    height: 16px;
+    width: 108px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 7px;
+    line-height: 8px;
+    text-align: center;
+    margin: 0 auto;
+}
+p.youmust {
+    
+    height: 12px;
+    width: 178px;
+    color: #DB0301;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 12px;
+    margin-bottom: 0px;
+}
+.you-must-pay
+{
+	margin-top:6px;
+}
+p .arrow
+{
+	float:right;
+}
+
+.finedate p.date {
+    /* height: 22px; */
+    /* width: 116px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.21px;
+    line-height: 23px;
+    margin-bottom: 6px!important;
+}
+
+.finedate p.amount {
+    /* height: 22px; */
+    /* width: 60px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.21px;
+    line-height: 23px;
+    margin-bottom: 6px!important;
+}
+
+.finedate p.visit {
+    height: 10px;
+    width: 168px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-bottom: 6px!important;
+}
+
+.carddetails {
+    
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 12px;
+}
+
+.finedate
+{
+	background-color:#99C0E9;
+	text-align:center;
+	padding:5px;
+}
+
+/*.headerqrcode
+{
+	float:left;
+}
+*/
+
+.address
+{
+	font-size:9px;
+}
+
+.clear
+{
+	clear:both;
+}
+
+.failure-to-stop {
+    height: 16px; 
+     width: 572px; 
+    background-color: #DC0300!important;
+    
+}
+.failure-to-stop p {
+    
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 7px;
+    font-weight: bold;
+    line-height: 7px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 4px;
+}
+.violations th {
+    height: 20px;
+    width: 55.1px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+}
+.violations td {
+    height: 20px;
+    width: 55.1px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    /* font-weight: bold; */
+    line-height: 10px;
+    padding-right: 17px;
+}
+.violations {
+    margin-top: 7px;
+    margin-left: 15px;
+    margin-bottom: 22px;
+}
+.violation-info-table
+{
+	width: 100%!important;
+}
+.col-md-4.violation-info {
+    box-sizing: border-box;
+    height: 187px;
+    width: 187px;
+    border: 1px solid #000000;
+    margin-left: 5px;
+}
+.violation-info p.view-images {
+    height: 20px;
+    width: 145px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    text-align: center;
+    margin: 12px 6px 1px;
+}
+.violation-info p.steps-to-get-info {
+    margin-top: 13px;
+    margin-right: 4px;
+}
+.violation-info span.count-of-violation-info-src {
+    border: 1px solid #000000;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 12px;
+    margin-right: 6px;
+}
+.violation-info p.steps-to-get-info {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    line-height: 10px;
+    margin-bottom: 24px!important;
+}
+.violation-info span.second-step {
+    /* height: 9px; */
+    /* width: 101px; */
+    color: #000000;
+    font-family: "Credit Card";
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1.55px;
+    line-height: 9px;
+}
+.third-step
+{
+	margin-top:24px!important;
+}
+.points-to-assess {
+    box-sizing: border-box;
+    height: 187px;
+    width: 187px;
+    border: 1px solid #000000;
+    margin-left: 5px;
+    padding-top: 79px;
+    padding-bottom: 78px;
+    padding-left: 8px;
+    pright: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.points-to-assess p.points-will-be-note {
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 10px;
+}
+.evidence p.info-about-evidence {
+    margin-top: 6px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+    margin-bottom: 11px;
+}
+.divide 
+{	
+	box-sizing: border-box;	
+	height: 2px;	
+	width: 576px;	
+	border: 1px dashed #979797;
+}
+.paying-or-contesting p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    line-height: 10px;
+    padding-top: 5px;
+}
+.stub-notice p.violation-stub {
+    height: 16px;
+    width: 209px;
+    background-color: #DC0300;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    line-height: 9px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+    /* padding-right: 30px; */
+}
+/*.stub-notice ul li.violation-stub {
+    display: inline-block;
+    height: 16px;
+    width: 209px;
+    background-color: #DC0300;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    line-height: 9px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+}*/
+.stub-notice p.validation-stub
+{
+	height: 16px;
+    width: 209px;
+    background-color: #DC0300;
+    color: #FFFFFF;
+    font-family: Arial;
+    font-size: 8px;
+    letter-spacing: 0.8px;
+    line-height: 9px;
+    padding-top: 4px;
+    padding-left: 6px;
+    padding-bottom: 3px;
+}
+/*.stub-notice ul li
+{
+	display: inline-block;
+}
+.stub-notice ul
+{
+	padding-left: 0px!important;
+}*/
+.stub p.stub-no {
+    height: 9px;
+    width: 101px;
+    color: #000000;
+    font-family: "Credit Card";
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 51px;
+    letter-spacing: 1.55px;
+    line-height: 9px;
+}
+./*stub-notice li.please-fill-in-the-pay-circle {
+    height: 10px;
+    width: 229px;
+    color: #000000;
+    font-family: "Arial Narrow";
+    font-size: 9px;
+    line-height: 10px;
+}*/
+.col-md-4.notice-date-info p {
+   
+}
+.notice-date-info p {
+     height: 11px;
+    /* width: 52.59px; */
+    color: #000000;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 11px;
+}
+ul.more-info-about-notice li {
+    /* height: 11px; */
+    /* width: 52.59px; */
+    color: #000000;
+    font-family: "Apple SD Gothic Neo";
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 11px;
+}
+.Date-notice {
+    /* color: red; */
+    float: left;
+    display: block;
+    background-color: #FFF;
+}
+.noticeDate, .noticeDate2 {
+    display: block;
+    background-color: #F3CBCB;
+    margin-left: 50px!important;
+}
+span.noticeDate, .noticeDate2 {
+    padding-top: 3px;
+    padding-left: 9px;
+}
+
+.footer-table th {
+    /* height: 20px; */
+    /* width: 43.1px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 10px;
+    /* font-weight: bold; */
+}
+.payable-to p.make-payment {
+    height: 9px;
+    width: 165px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 9px;
+        margin-bottom: 5px!important;
+    }
+  .payable-to  p.Villagename {
+    height: 9px;
+    width: 104px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 8px;
+    font-weight: bold;
+    line-height: 9px;
+}
+  .payable-to p.post-address1 {
+    /* height: 18px; */
+    /* width: 93px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 9px;
+    margin-bottom: 3px;
+}
+.payable-to p.great-neck {
+    /* height: 18px; */
+    /* width: 93px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: bold;
+    line-height: 9px;
+}
+.col-md-8.footer-table td {
+    height: 20px;
+    width: 55.1px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 9px;
+    /* font-weight: bold; */
+    line-height: 10px;
+    padding-right: 17px;
+}
+p.see-photo-link {
+    /* height: 24px; */
+    /* width: 239px; */
+    color: #000000;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.22px;
+    line-height: 12px;
+}
+.card-list
+{
+	margin-left:12px;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<div class="row">
+			<div class="col-md-2 logoimg">
+			<img class="logo" src="images/logo.png">
+			</div>
+			<div class="col-md-10 headertxt">
+				<p class="automated-stop-sign">AUTOMATED STOP SIGN ENFORCEMENT VIOLATION</p>
+				<p class="village-of-great-neck">VILLAGE OF GREAT NECK</p>
+				<p class="baker-hill-road">61 Baker Hill Road • Great Neck, NY 11023</p>
+				<p class="video-enforcement-com">VideoEnforcement.com</p>
+			</div>
+		</div>
+	</div><!--end of header-->
+	<div class="headerqrcode">
+		<div class="row">
+		<div class="col-md-4 notice-box">
+				<div class="notice">
+					<p class="notice-date"> Notice Date: <span class="date-of-notice">Oct 06 2019</span></p>
+					<p class="violation-number">Violation Number:<span class="Vnumber"> 19001200012100</span></p>
+					<p class="pin-number">Pin Number: <span class="pin"> 883</span> </p>
+				</div>
+				<div class="name">
+					<p class="address">JOHN DOE<br />
+					123 SAMPLE AVE<br />
+					NEW YORK, NY 11023
+					</p>
+				</div>
+		</div><!--notice-box-->
+		<div class="col-md-4 qr-code">
+			<img class="qrcode" src="images/QR Code.png" />
+			<p class="scanqr">Scan code with your mobile camera to view & pay ticket online.</p>
+		</div><!--qr-code-->
+		<div class="col-md-4 you-must-pay">
+				<p class="youmust">YOU MUST PAY OR CONTEST BY</p>
+				<p class=""><img class="arrow" src="images/Arrow.png" /></p>
+				<br />
+				<div class="finedate">
+					<p class="date">FEB 23 2020</p>
+					<p class="amount">$50.00</p>
+					<p class="visit">VISIT VIDEOENFORCEMENT.COM/PAY</p>
+				</div>
+				<p class="carddetails">Payment can be made online by credit card or debit card.<span><img class="arrow" src="images/20x14.png" /></span></p>
+		</div>
+		</div><!--row-->		
+	</div><!--End of headercode-->
+
+	<div class="failure-to-stop">
+		<p>FAILURE TO STOP AT A TRAFFIC SIGNAL-NO POINTS</p>
+	</div>
+	<div class="violations">
+
+
+	<table class="violation-info-table">
+	 
+	  <tr>
+	      <th>VIOLATION</th>
+	      <th>PLATE</th>
+	      <th>STATE</th>
+	      <th>TYPEDATE</th>
+	      <th>DATE</th>
+	      <th>TIME</th>
+	      <th>CODE</th>
+	      <th>LOCATION</th>
+	    </tr>
+	    <tr>
+	     <td>1910060000</td>
+	     <td>HKV3140</td>
+	     <td>NY</td>
+	     <td>PAS</td>
+	     <td>Seb 16 2019</td>
+	     <td>08:47 PM</td>
+	     <td>STOP SIGN</td>
+	     <td>10 BYRON LN - 11023</td>
+
+	    </tr>
+	  </thead>
+	</table>
+
+	</div><!--end of class violations-->
+
+	<div class="evidence">
+		<div class="row">
+			<div class="col-md-4 evidence-image">
+				<img class="evidenceimg" src="images/12080180.png" /></p>
+			</div>
+			<div class="col-md-4 violation-info">
+				<p class="view-images">You can view full color images<br>and video for this violation at</p>
+				<p class="steps-to-get-info"><span class="count-of-violation-info-src">1</span>VIDEOINFORCEMENT.COM</p>
+				<p class="step-to-get-info"><span class="count-of-violation-info-src">2</span><b>Enter</b><span class="second-step"> 1910060000-883</span></p>
+				<p class="steps-to-get-info third-step"><span class="count-of-violation-info-src">3</span>PAY-OR-CONTEST-DETAILS</p>
+				<img class="evidenceimg" src="images/35x25.png" /></p>
+			</div>
+			<div class="col-md-4 points-to-assess">
+				<p class="points-will-be-note">Points will not be assessed against the<br>registered owner or the designated driver for that violation</p>
+			</div>
+
+		</div>
+<p class="info-about-evidence">These recorded images and videos are the evidence of violation of failure to stop at stop sign.Please not the vehical identified above beara licence plate
+				<br> registered or leased your name.All registered owners are legally responsible for this violation.If you believe the licence plate displayed in the photo above is not registered to you please contact to xx.</p>
+	</div><!--End of evedence-->
+
+<div class="divide"></div>
+<div class="paying-or-contesting">
+		<p><b>PAYING OR CONTESTING BY MAIL:</b>TO ENSURE PROPER CREDIT PLEASE RETURN THIS STUB WITH YOUR PAYMENT.</p>
+</div>
+
+<div class="main-class-notice-of-stub">
+		<div class="row">
+					<div class="col-md-4 stub-notice">
+						<p class="validation-stub">NOTICE OF VIOLATION STUB BY MAIL</p>
+							
+					</div><!--end of stub-notice-->
+					<div class="col-md-4 stub">
+						<p class="stub-no"> 1910060000-883</p>
+					</div>
+					
+					<div class="col-md-4 notice-date-info">
+						
+							<div class=" main-div-of notice-info row">
+								
+								<ul class="more-info-about-notice">
+									<li class="notice-date-info">
+										<span class="Date-notice">Notice Date:</span>
+										<span class="noticeDate">10/6/2019</span>
+									</li>
+									<li class="notice-date-info">
+										<span class="Date-notice">Violation:</span>
+										<span class="noticeDate2 violation-notice-number">1910060000-883</span></li>
+								</ul>
+
+						</div>
+					</div><!--end notice-info-row-->
+			</div>
+				<div class="row">
+						<div class="col-md-8 footer-table">
+
+							<table class="violation-info-table">
+	 
+	  				<tr>
+				      <th>TICKET</th>
+				      <th>PLATE</th>
+				      <th>STATE</th>
+				      <th>DATE</th>
+	      
+	    		</tr>
+	    		<tr>
+				     <td>1910060000</td>
+				     <td>HKV3140</td>
+				     <td>NY</td>
+				 	<td>Seb 16 2019</td>
+	    	</tr>
+					</table>
+					<p class="see-photo-link">SEE VIDEO OR PHOTO OR PAY BY CREDIT<br>CARD NOW ATVIDEOENFORCEMENT.COM/PAY<span class="card-list"><img src="images/20x14.png"></span></p>
+						</div>
+						
+						<div class="col-md-4 payable-to">
+							<p class="make-payment">Make check payable to:</p>
+							<p class="Villagename">VILLAGE OF GREAT NECK</p>
+							<p class="post-address1">P.O BOX 2222</p>
+							<P class="great-neck">GREAT NECK,NY 11021</P>
+						</div>
+					</div>
+			
+			</div><!--end of main Row-->
+		</div><!--End of notice stub-->
+	</div>
+
+</div><!--End of Container-->

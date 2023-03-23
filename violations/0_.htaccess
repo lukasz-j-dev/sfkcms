@@ -1,0 +1,5 @@
+Options +FollowSymLinks -Indexes
+RewriteEngine on
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{QUERY_STRING} ^vio_num=(\d+)$
+RewriteRule ^index\.php$ /%1? [R=301,L]

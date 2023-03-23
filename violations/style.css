@@ -1,0 +1,829 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap');
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #f1f1f1;
+}
+
+.address .pay-amountbtn {
+    background: #1e90ff;
+    border: none;
+    width: 100%;
+    font-family: Roboto;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 16px;
+    height: 50px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.address .floating-label textarea {
+    width: 100%;
+    resize: none;
+    outline: none;
+}
+
+.address p span {
+    font-size: 16px;
+}
+
+.header {
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.header h3 {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.18px;
+    line-height: 24px;
+    text-align: center;
+    padding-top: 16.43px;
+    margin: 0px !important;
+}
+
+.header h4 {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 16px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.violation-number,
+.violation-plate,
+.violation-date {
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+    text-align: left;
+    /*margin: 12px;
+    padding: 15px 0px 13px 16px;*/
+}
+
+.violation-number p,
+.violation-plate p,
+.violation-date p {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    line-height: 16px;
+    margin-bottom: 0px !important;
+    padding: 16px 0px 4px 16px;
+}
+
+.violation-number h3,
+.violation-plate h3,
+.violation-date h3 {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    margin: 0px !important;
+    padding: 1px 0px 28px 15px;
+}
+
+.amount-due {
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+}
+
+.due-date p,
+.Total-due-amount p {
+    /* color: #DC0300; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 16px;
+    margin-bottom: 0px !important;
+    padding: 28.18px 0px 0px 16px;
+}
+
+.card-details .expiry-month .custom-month-label {
+    left: 34px;
+}
+
+.due-date p {
+    color: #DC0300;
+    padding-top: 22px;
+}
+
+.Total-due-amount p {
+    padding-top: 19px;
+}
+
+.due-date h3,
+.Total-due-amount h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    margin: 0px;
+    padding: 4px 0px 0px 16px;
+}
+
+.due-date h3 {
+    color: #DC0300;
+}
+
+.pay-now a.btn.btn-info {
+    margin: 22px 22px 22px 16px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    text-align: center;
+    padding: 14px 30px;
+    /*background-color: dodgerblue; */
+    background-color: #0091FF;
+}
+
+.panel-default>.panel-heading {
+    background-color: #ffffff;
+}
+
+.video-recording {
+    /* background-color: #FFFFFF!important; */
+    margin-top: 10px;
+}
+
+.bootstrap-select .dropdown-menu li a {
+    float: left;
+}
+
+.video-recording a,
+.pay-by-mail a,
+.request-in-person-hearing a,
+.faqs a,
+.pay-online a {
+    float: right;
+    color: #0091FF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    /*margin-right: 9px;*/
+    margin-top: 4px;
+}
+
+h4.panel-title {
+    padding: 16px 0px 16px 0px;
+}
+
+.panel-heading {
+    padding: 17px 16px 17px 16px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.pay-online-main {
+    margin-top: 10px;
+}
+
+.padding-34 {
+    padding: 16px 10px 0px 10px;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.video-recording span,
+.pay-by-mail span,
+.request-in-person-hearing span,
+.faqs span,
+.pay-online span {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.29px;
+    line-height: 20px;
+}
+
+.panel-title a {
+    text-decoration: none !important;
+}
+
+img.secure-icon {
+    margin-left: 8px;
+    margin-top: -3px;
+}
+
+.pay-online span.credit-cards {
+    padding-left: 102px;
+}
+
+.formInput {
+    background-color: #f1f1f1 !important;
+    /* border: 1px solid #f1f1f1 !important; */
+    /*border-bottom: 2px solid #0091FF !important;*/
+    /*padding: 16px 0px 15px 16px !important;*/
+    padding: 22px 0px 10px 16px !important;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.38);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    border-radius: 4px 4px 0 0;
+}
+
+.cardDetails {
+    background-color: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    border-bottom: 2px solid #0091FF;
+    padding: 15px 6px;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    border-radius: 4px 4px 0 0;
+}
+
+.online-payment .required {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    margin-left: 16px;
+    margin-bottom: 13px !important;
+    display: block;
+    margin-top: 3px;
+}
+
+.online-payment span.valid-card-number {
+    color: #B00020;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    margin-bottom: 13px !important;
+    display: block;
+    margin-top: 3px;
+    margin-left: 16px;
+    font-weight: bold
+}
+
+.online-payment input.pay-amountbtn {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    width: 100%;
+    padding: 16px 67px 17px 67px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.main-body-class-reqest-in-person {
+    padding: 7px 1px 16px 1px;
+}
+
+.main-body-class-reqest-in-person .request-of-copy p,
+.address p {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+}
+
+.request-of-copy,
+.mail-body {
+    margin-bottom: 30px;
+}
+
+.address {
+    margin-bottom: 32px;
+}
+
+.brief-note p,
+.brief-note2 p {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+}
+
+.brief-note {
+    padding-bottom: 31px;
+    border-bottom: 1px solid #979797;
+}
+
+.common-issues h3 {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    margin-top: 38px;
+    margin-bottom: 20px;
+}
+
+.common-issues p.enclose-copy {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 22px;
+    margin-top: 7px;
+    margin-bottom: 24px;
+}
+
+.common-issues h4 {
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    margin-bottom: 7px;
+}
+
+h4.payable-to {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+    margin-bottom: 22px;
+}
+
+.main-body-class-reqest-in-person {
+    /* padding: 7px 1px 16px 1px; */
+    padding: 10px;
+}
+
+.panel-group {
+    margin-bottom: 16px !important;
+}
+
+.panel-body {
+    padding: 16px !important;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.padding-bottom-100 {
+    padding-bottom: 100px;
+}
+
+span.valid-card-number {
+    display: none !important;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+    /* Safari only override */
+    ::i-block-chrome,
+    .violation-number h3,
+    .violation-plate h3,
+    .violation-date h3 {
+        font-weight: 500;
+    }
+
+    .due-date p,
+    .Total-due-amount p {
+        font-weight: 500;
+    }
+
+    .due-date h3,
+    .Total-due-amount h3 {
+        font-weight: 500;
+    }
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-input,
+.floating-select {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    height: 55px;
+    background-color: transparent;
+    border: none;
+    /*border-bottom:1px solid #757575;*/
+}
+
+.floating-input:focus,
+.floating-select:focus {
+    outline: none;
+    /*border-bottom:2px solid #5264AE;*/
+    border-bottom: 2px solid #0091FF !important;
+}
+
+label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 18px;
+    top: 5px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    margin-top: 10px;
+}
+
+.floating-input:focus~label,
+.floating-input:not(:placeholder-shown)~label {
+    top: -5px;
+    font-size: 12px;
+    color: #0091FF;
+}
+
+.floating-select:focus~label,
+.floating-select:not([value=""]):valid~label {
+    top: -18px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+
+input.floating-input:focus,
+input.floating-input:not([value=""]):valid {
+    outline: none;
+    border-bottom: 2px solid #0091FF;
+}
+
+/* active state */
+.floating-input:focus~.bar:before,
+.floating-input:focus~.bar:after,
+.floating-select:focus~.bar:before,
+.floating-select:focus~.bar:after {
+    width: 50%;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.floating-textarea {
+    min-height: 30px;
+    max-height: 260px;
+    overflow: hidden;
+    overflow-x: hidden;
+}
+
+/* highlighter */
+.highlight {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 15%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* active state */
+.floating-input:focus~.highlight,
+.floating-select:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+/* animation */
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+/****  floating-Lable style end ****/
+.floating-form {
+    width: 420px;
+}
+
+/*         .panel-heading.active {*/
+/*  background-color: #F1F1F1;*/
+/*}*/
+.formInput {
+    color: #000;
+}
+
+.amount-due .col-md-4 {
+    width: 33.33% !important;
+    float: left;
+}
+
+.violation-info-mobile-inner {
+    padding-left: 17px;
+    /* padding-right: 61px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.violation-info-mobile {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 8px;
+}
+
+/*.violation-number-mobile-label,.plate-number-label,.violation-date-mobile-label,.due-date-label,.amount-due-mobile-label{*/
+/*    padding-right:41px;*/
+/*}*/
+span.mobile-label {
+    width: 50%;
+    display: inline-block;
+}
+
+.violation-info-mobile-container {
+    padding-bottom: 10px;
+}
+
+.violation-info-mobile span {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 30px;
+}
+
+.violation-info-mobile span.mobile-value {
+    font-weight: 600;
+}
+
+.cvv {
+    position: relative;
+}
+
+.paid_text {
+    margin-top: 26px;
+}
+
+.paid_text span {
+    font-family: 'Roboto Regular';
+    font-size: 19px;
+}
+
+label.cvv-label {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.4;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+}
+
+.floating-label-last {
+    margin-bottom: 0 !important;
+}
+
+.false-card-name {
+    display: none;
+}
+
+.year {
+    position: relative;
+}
+
+p.validation-error {
+    display: none;
+    padding-left: 18px;
+    color: #ff0000;
+    padding-top: 4px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    .violations-information .col-md-4 {
+        width: 32% !important;
+        display: inline-block;
+    }
+
+    .violation-number h3,
+    .violation-plate h3,
+    .violation-date h3 {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .violation-number p,
+    .violation-plate p,
+    .violation-date p {
+        font-size: 12px;
+    }
+
+    .due-date h3,
+    .Total-due-amount h3 {
+        font-size: 15px;
+    }
+
+    .pay-now a.btn.btn-info {
+        margin: 22px 22px 22px 0;
+    }
+
+    .mobile-pay-button .pay-now a.btn.btn-info {
+        margin: 15px auto 5px auto;
+    }
+
+    /*.pay-now a.btn.btn-info {*/
+    /*    margin: 0px 22px 22px 22px;*/
+    /*}*/
+
+}
+
+@media only screen and (min-width: 800px) {
+
+    .container {
+        width: 580px;
+        padding: 15px;
+    }
+}
+
+
+@media only screen and (max-width:568px) {
+
+    .violations-information,
+    .amount-due,
+    img.secure-icon {
+        display: none !important;
+    }
+
+    .video-recording span,
+    .pay-by-mail span,
+    .request-in-person-hearing span,
+    .faqs span,
+    .pay-online span {
+        font-size: 16px;
+    }
+
+    .video-recording a,
+    .pay-by-mail a,
+    .request-in-person-hearing a,
+    .faqs a,
+    .pay-online a {
+        font-size: 13px;
+    }
+
+    .panel-heading {
+        padding: 17px;
+    }
+
+    .pay-online span.credit-cards {
+        padding-left: 27px;
+    }
+
+    .credit-cards img {
+        width: 45%;
+    }
+
+    .pay-online-main .panel-heading {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 568px) {
+
+    .violation-info-mobile,
+    .mobile-pay-button {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width:320px) and (max-width:568px) {
+
+    .header h4 {
+        font-size: 14px;
+    }
+
+    .mobile-pay-button .pay-now {
+        text-align: center;
+    }
+
+    .violation-info-mobile .violation-info-mobile-inner .violation-number-mobile {
+        color: #365c81;
+        border-bottom: 1px solid #365c81;
+    }
+
+}
+
+a.pay-amountbtn {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    width: 100%;
+    padding: 16px 67px 17px 67px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.pay-now a.btn.btn-success {
+    margin: 22px 0px 22px 16px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.25px;
+    line-height: 16px;
+    text-align: center;
+    padding: 14px 30px;
+    background-color: #59a82e;
+}
+
+.payment-errors {
+    text-align: center;
+    margin-top: 8px;
+    color: #ff0000;
+}
+
+.bootstrap-select>.dropdown-toggle {
+    background-color: transparent;
+}

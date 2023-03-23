@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Ticket View</title>
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<style type="text/css">@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700&display=swap');	
+         html {
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         *, *:before, *:after {
+         -webkit-box-sizing: inherit;
+         -moz-box-sizing: inherit;
+         box-sizing: inherit;
+         }	
+         body{
+         margin: 0px;
+         padding: 0px;
+         background: #f1f1f1;
+         }
+        
+         .header {
+         border-radius: 4px;
+         background-color: #FFFFFF;
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+         margin-top: 20px;
+         }
+         .header h3 {
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto', sans-serif;
+         font-size: 24px;
+         letter-spacing: 0.18px;
+         line-height: 24px;
+         text-align: center;
+         padding-top: 16.43px;
+         margin: 0px!important;
+         }
+         .header h4 {
+         color: rgba(0,0,0,0.87);
+         font-family:  'Roboto', sans-serif;
+         font-size: 16px;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         text-align: center;
+         padding-bottom: 16px;
+         margin-top: 8px;
+         margin-bottom: 0px;
+         }
+         .violation-number,.violation-plate,.violation-date {
+         border-radius: 4px;
+         background-color: #FFFFFF;
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+         margin-top: 8px;
+         text-align: left;
+         /*margin: 12px;
+         padding: 15px 0px 13px 16px;*/
+         }
+         .violation-number p,.violation-plate p,.violation-date p {
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: 500;
+         letter-spacing: 1.5px;
+         line-height: 16px;
+         margin-bottom: 0px!important;
+         padding: 16px 0px 4px 16px;
+         }
+         .violation-number h3, .violation-plate h3, .violation-date h3 {
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto', sans-serif;
+         font-size: 20px;
+         font-weight: 700;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         margin: 0px!important;
+         padding: 1px 0px 28px 16px;
+         }
+         .amount-due {
+         border-radius: 4px;
+         background-color: #FFFFFF;
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+         margin-top: 8px;
+         }
+         .due-date p,.Total-due-amount p {
+         /* color: #DC0300; */
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: 700;
+         letter-spacing: 1.5px;
+         line-height: 16px;
+         margin-bottom: 0px!important;
+         padding: 28.18px 0px 0px 22px;
+         }
+         .due-date p {
+         color: #DC0300;
+         padding-top: 22px;
+         }
+         .Total-due-amount p {
+         padding-top: 19px;
+         }
+         .due-date h3, .Total-due-amount h3 {
+         font-family: 'Roboto', sans-serif;
+         font-size: 20px;
+         font-weight: 700;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         margin: 0px;
+         padding: 4px 0px 0px 22px;
+         }
+         .due-date h3 {
+         color: #DC0300;
+         }
+         .pay-now a.btn.btn-info {
+         margin: 22px 22px 22px 12px;
+         border-radius: 4px;
+         color: #FFFFFF;
+         font-family:  'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: 500;
+         letter-spacing: 1.25px;
+         line-height: 16px;
+         text-align: center;
+         padding: 14px 17.33px 14px 20px;
+         background-color: dodgerblue;
+         }
+         .panel-default > .panel-heading {
+         background-color: #ffffff;
+         }
+         .video-recording {
+         /* background-color: #FFFFFF!important; */
+         margin-top: 10px;
+         }
+         .video-recording a ,.pay-by-mail a,.request-in-person-hearing a,.faqs a,.pay-online a{
+         float: right;
+         color: #0091FF;
+         font-family:  'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: 500;
+         letter-spacing: 1.25px;
+         line-height: 16px;
+         margin-right: 9px;
+         margin-top: 4px;
+         }
+         h4.panel-title {
+         padding: 16px 0px 16px 0 px;
+         }
+         .panel-heading {
+         padding: 17px 16px 17px 16px;
+         border-bottom: 1px solid transparent;
+         border-top-left-radius: 3px;
+         border-top-right-radius: 3px;
+         }
+         .padding-34 {
+         padding: 16px 10px 0px 10px;
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto',sans-serif;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         font-size: 16px;
+         }
+         .video-recording span,.pay-by-mail span,.request-in-person-hearing span,.faqs span,.pay-online span {
+         color: rgba(0,0,0,0.6);
+         font-family:  'Roboto', sans-serif;
+         font-size: 18px;
+         letter-spacing: 0.25px;
+         line-height: 20px;
+         }
+         .panel-title a
+         {
+         text-decoration: none!important;
+         }
+         img.secure-icon {
+         margin-left: 8px;
+         margin-top: -3px;
+         }
+         .pay-online span.credit-cards
+         {
+         padding-left: 117px
+         }
+         .formInput {
+         background-color: #f1f1f1 !important;
+         /* border: 1px solid #f1f1f1 !important; */
+         border-bottom: 2px solid #0091FF !important;
+         padding: 16px 0px 15px 16px !important;
+         width: 100%;
+         color: rgba(0,0,0,0.38);
+         font-family: 'Roboto', sans-serif;
+         font-size: 16px;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         border-radius: 4px 4px 0 0;
+         }
+         .cardDetails {
+         background-color: #f1f1f1;
+         border: 1px solid #f1f1f1;
+         border-bottom: 2px solid #0091FF;
+         padding: 15px 6px;
+         width: 100%;
+         color: rgba(0,0,0,0.5);
+         font-family: 'Roboto', sans-serif;
+         font-size: 12px;
+         letter-spacing: 0.4;
+         line-height: 24px;
+         letter-spacing: 0.4px;
+         line-height: 16px;
+         border-radius: 4px 4px 0 0;
+         }
+         .online-payment .required {
+         color: rgba(0,0,0,0.6);
+         font-family: 'Roboto', sans-serif;
+         font-size: 12px;
+         letter-spacing: 0.4px;
+         line-height: 16px;
+         margin-left: 16px;
+         margin-bottom: 13px!important;
+         display: block;
+         margin-top: 3px;
+         }
+         .online-payment span.valid-card-number {
+         color: #B00020;
+         font-family: 'Roboto', sans-serif;
+         font-size: 12px;
+         letter-spacing: 0.4px;
+         line-height: 16px;
+         margin-bottom: 13px!important;
+         display: block;
+         margin-top: 3px;
+         margin-left: 16px;
+         font-weight: bold
+         }
+         .online-payment input.pay-amountbtn {
+         background-color: dodgerblue;
+         border: 1px solid dodgerblue;
+         width: 100%;
+         padding: 16px 67px 17px 67px;
+         color: #FFFFFF;
+         font-family:'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: 500;
+         letter-spacing: 1.25px;
+         line-height: 16px;
+         text-align: center;
+         border-radius: 4px;
+         }
+         .main-body-class-reqest-in-person {
+         padding: 7px 1px 16px 1px;
+         }
+         .main-body-class-reqest-in-person .request-of-copy p, .address p {
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto', sans-serif;
+         font-size: 16px;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         }
+         .request-of-copy,.mail-body {
+         margin-bottom: 30px;
+         }
+         .address {
+         margin-bottom: 32px;
+         }
+         .brief-note p,.brief-note2 p {
+         color: #000000;
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         letter-spacing: 0.25px;
+         line-height: 20px;
+         }
+         .brief-note
+         {
+         padding-bottom: 31px;
+         border-bottom: 1px solid #979797;
+         }
+         .common-issues h3{
+         color: #000000;
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         letter-spacing: 0.25px;
+         line-height: 20px;
+         margin-top: 38px;
+         margin-bottom:20px;
+         }
+         .common-issues p.enclose-copy{
+         color: #000000;
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         letter-spacing: 0.25px;
+         line-height: 22px;
+         margin-top: 7px;
+         margin-bottom:24px;
+         }
+         .common-issues h4 {
+         color: #000000;
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: bold;
+         letter-spacing: 0.25px;
+         line-height: 20px;
+         margin-bottom: 7px;
+         }
+         h4.payable-to {
+         color: rgba(0,0,0,0.87);
+         font-family: 'Roboto', sans-serif;
+         font-size: 16px;
+         letter-spacing: 0.15px;
+         line-height: 24px;
+         margin-bottom: 22px;
+         }
+         .main-body-class-reqest-in-person {
+         /* padding: 7px 1px 16px 1px; */
+         padding: 10px;
+         }
+         .panel-group {
+         margin-bottom: 16px!important;
+         }
+         .panel-body {
+         padding: 16px!important;
+         box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+         }
+         .padding-bottom-100 {
+         padding-bottom: 100px;
+         }
+         @media screen and (-webkit-min-device-pixel-ratio:0) 
+         { /* Safari only override */ 
+         ::i-block-chrome, .violation-number h3, .violation-plate h3, .violation-date h3
+         { 
+         font-weight: 500;
+         } 
+         .due-date p, .Total-due-amount p 
+         {
+         font-weight: 500;
+         }
+         .due-date h3, .Total-due-amount h3
+         {
+         font-weight: 500;
+         }
+         }
+         .floating-label { 
+         position:relative; 
+         margin-bottom:20px; 
+         }
+         .floating-input , .floating-select {
+         font-size:16px;
+         display:block;
+         width:100%;
+         height:55px;
+         background-color: transparent;
+         border:none;
+         border-bottom:1px solid #757575;
+         }
+         .floating-input:focus , .floating-select:focus {
+         outline:none;
+         border-bottom:2px solid #5264AE; 
+         }
+         label {
+         color: #999;
+         font-size: 16px;
+         font-weight: normal;
+         position: absolute;
+         pointer-events: none;
+         left: 18px;
+         top: 5px;
+         transition: 0.2s ease all;
+         -moz-transition: 0.2s ease all;
+         -webkit-transition: 0.2s ease all;
+         margin-top: 10px;
+         }
+         .floating-input:focus ~ label, .floating-input:not(:placeholder-shown) ~ label {
+         top:-10px;
+         font-size:14px;
+         color:dodgerblue;
+         }
+         .floating-select:focus ~ label , .floating-select:not([value=""]):valid ~ label {
+         top:-18px;
+         font-size:14px;
+         color:#5264AE;
+         }
+         /* active state */
+         .floating-input:focus ~ .bar:before, .floating-input:focus ~ .bar:after, .floating-select:focus ~ .bar:before, .floating-select:focus ~ .bar:after {
+         width:50%;
+         }
+         *, *:before, *:after {
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+         }
+         .floating-textarea {
+         min-height: 30px;
+         max-height: 260px; 
+         overflow:hidden;
+         overflow-x: hidden; 
+         }
+         /* highlighter */
+         .highlight {
+         position:absolute;
+         height:50%; 
+         width:100%; 
+         top:15%; 
+         left:0;
+         pointer-events:none;
+         opacity:0.5;
+         }
+         /* active state */
+         .floating-input:focus ~ .highlight , .floating-select:focus ~ .highlight {
+         -webkit-animation:inputHighlighter 0.3s ease;
+         -moz-animation:inputHighlighter 0.3s ease;
+         animation:inputHighlighter 0.3s ease;
+         }
+         /* animation */
+         @-webkit-keyframes inputHighlighter {
+         from { background:#5264AE; }
+         to 	{ width:0; background:transparent; }
+         }
+         @-moz-keyframes inputHighlighter {
+         from { background:#5264AE; }
+         to 	{ width:0; background:transparent; }
+         }
+         @keyframes inputHighlighter {
+         from { background:#5264AE; }
+         to 	{ width:0; background:transparent; }
+         }
+         /****  floating-Lable style end ****/
+         .floating-form {
+         width:420px;
+         }
+         .panel-heading.active {
+  background-color: #F1F1F1;
+}
+        .formInput{
+             color: #000;
+                  }
+   .amount-due .col-md-4 {
+    width: 33.33% !important;
+    float:left;
+}               
+@media only screen and (max-width: 767px){
+        
+.violations-information .col-md-4 {
+    width: 32% !important;
+    display: inline-block;
+    
+}
+.violation-date p {
+    padding: 3px 5px 0px 14px !important;
+} 
+.violation-number h3, .violation-plate h3, .violation-date h3 {
+    font-size: 20px;
+    font-weight: 700;
+    }
+.pay-now a.btn.btn-info {
+    margin: 0px 22px 22px 22px;
+}
+
+}  
+@media only screen and (min-width: 800px){
+    
+     .container {
+         width: 900px !important;
+         padding:15px;
+         }
+}
+	</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h3>VIDEO ENFORCEMENT</h3>
+
+<h4>Automated Stop Sign Enforcement Violation</h4>
+</div>
+
+<div class="violations-information">
+<div class="row">
+<div class="col-md-4 col-sm-4">
+<div class="violation-number">
+<p><b>VIOLATION</b></p>
+
+<h3><b>1910060000</b></h3>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-4">
+<div class="violation-plate">
+<p><b>PLATE</b></p>
+
+<h3><b>HKV3140</b></h3>
+</div>
+</div>
+
+<div class="col-md-4 col-sm-4">
+<div class="violation-date">
+<p><b>VIOLATION DATE</b></p>
+
+<h3><b>SEP 16 19</b></h3>
+</div>
+</div>
+</div>
+</div>
+<!--End of violations-information-->
+
+<div class="amount-due">
+<div class="row">
+<div class="col-md-4">
+<div class="due-date">
+<p><b>DUE DATE</b></p>
+
+<h3><b>FEB 23 2020</b></h3>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="Total-due-amount">
+<p><b>AMOUNT DUE</b></p>
+
+<h3><b>$50.00</b></h3>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="pay-now"><a class="btn btn-info" href="#">PAY NOW</a></div>
+</div>
+</div>
+</div>
+<!--End of amount due-->
+
+<div class="panel-group video-recording">
+<div class="video-recording">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><span>Video recording</span> <a data-toggle="collapse" href="#video-recording-body">OPEN</a></h4>
+</div>
+
+<div class="panel-collapse collapse" id="video-recording-body">
+<div class="video-of-evidence">
+<video controls="" width="100%"><source src="mov_bbb.mp4" type="video/mp4" /> <source src="video/evidence-video.ogg" type="video/ogg" /> Your browser does not support HTML5 video.</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--End of video recording-->
+
+<div class="panel-group">
+<div class="pay-online">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><span>Pay online<img class="secure-icon" src="images/secure.png" /></span> <span class="credit-cards"><img src="images/35x25.png" /></span> <a data-toggle="collapse" href="#pay-online-body">OPEN</a></h4>
+</div>
+
+<div class="panel-collapse collapse" id="pay-online-body">
+<div class="panel-body">
+<div class="online-payment">
+<form action="#" id="floating-form" method="post">
+<div class="floating-label"><input cardname="" class="floating-input formInput" id="cardname" pattern="[0-9]* name=" /> <label>Name on card</label></div>
+
+<div class="floating-label"><input class="floating-input formInput text" id="cardnumber" maxlength="19" name="cardnumber" placeholder=" " type="number" /> <label>Card number</label></div>
+<span class="valid-card-number">Enter a valid card number</span>
+
+<div class="row card-details">
+<div class="col-md-4"><!--<div class="expiry-month"><input class="cardDetails" id="month" name="month" placeholder="Expration month" type="text" />-->
+<div class="expiry-month"><select class="cardDetails" id="month" name="month"><option disabled="disabled" hidden="" selected="selected" value="">Expiration month</option><option value="01">JAN</option><option value="02">FEB</option><option value="03">MAR</option><option value="04">APR</option><option value="05">MAY</option><option value="06">JUN</option><option value="07">JUL</option><option value="08">AUG</option><option value="09">SEP</option><option value="10">OCT</option><option value="11">NOV</option><option value="12">DEC</option> </select><br />
+<span class="required">Required</span></div>
+</div>
+
+<div class="col-md-4"><!--<div class="year"><input class="cardDetails" id="year" name="year" placeholder="Expration year" type="text" />-->
+<div class="year"><select class="cardDetails" id="year" name="year"><option disabled="disabled" hidden="" selected="selected" value="">Expiration year</option><option value="01">2020</option><option value="02">2021</option><option value="03">2022</option><option value="04">2023</option><option value="05">2024</option><option value="06">2025</option><option value="07">2026</option><option value="08">2027</option><option value="09">2028</option><option value="10">2029</option><option value="11">2030</option><option value="12">2031</option><option value="01">2032</option><option value="02">2033</option><option value="03">2034</option><option value="04">2035</option><option value="05">2036</option><option value="06">2037</option><option value="07">2038</option><option value="08">2039</option><option value="09">2040</option> </select><br />
+<span class="required">Required</span></div>
+</div>
+
+<div class="col-md-4">
+<div class="cvv"><input class="cardDetails" cvv="" id="cvv" name="cvv" pattern="[0-9]*  placeholder=" /><br />
+<span class="required">Required</span></div>
+</div>
+</div>
+<!--End of row-->
+
+<div class="floating-label"><input class="floating-input formInput" name="cardname" placeholder=" " type="email" /> <label>Email address</label></div>
+<!--<input class="formInput" name="cardname" placeholder="Email address" type="email" />--><br />
+<span class="required">Enter email address to receive payment confirmation</span> <input class="pay-amountbtn" name="pay-fine-amount" type="submit" value="PAY $50.00" /></form>
+</div>
+<!--End of online pay--></div>
+<!--End of panel body--></div>
+</div>
+</div>
+</div>
+<!--End of pay-online-->
+
+<div class="panel-group">
+<div class="pay-by-mail">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><span>Pay by mail</span> <a data-toggle="collapse" href="#pay-by-mail-body">OPEN</a></h4>
+</div>
+
+<div class="panel-collapse collapse" id="pay-by-mail-body">
+<div class="panel-body">
+<div class="padding-34">
+<div class="request-of-copy mail-body">
+<p>Follow the instructions on the ticket. Enclose a check or<br />
+money order for the full amount due. Do NOT send cash.<br />
+Don&rsquo;t include any correspondence in the envelope other than<br />
+your payment. To ensure proper credit please include the<br />
+stub with your payment which includes the violation number.</p>
+</div>
+
+<div class="address">
+<h4 class="payable-to"><b>Make Payable to</b></h4>
+
+<p><b>VILLAGE OF GREAT NECK</b><br />
+P.O. BOX 2222<br />
+GREAT NECK, NY 11021</p>
+</div>
+
+<div class="brief-note2">
+<p>Please note: The address is for mailing correspondence through postal mail. Walk-ins will not be seen at this location.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--End of pay-by-mail-->
+
+<div class="panel-group">
+<div class="request-in-person-hearing">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><span>Request in-person hearing date</span> <a data-toggle="collapse" href="#request-in-person-hearing-body">OPEN</a></h4>
+</div>
+
+<div class="panel-collapse collapse" id="request-in-person-hearing-body">
+<div class="panel-body">
+<div class="main-body-class-reqest-in-person">
+<div class="request-of-copy">
+<p>Return a copy of your ticket and a letter explaining why you should be found not guilty of the violation.</p>
+&nbsp;
+
+<p>Attach copies of any evidence that you wish to present.</p>
+&nbsp;
+
+<p>Make sure to keep copies of everything that you send for your own records and mail your request to:</p>
+</div>
+
+<div class="address">
+<p><b>VILLAGE OF GREAT NECK</b><br />
+P.O. BOX 2222<br />
+GREAT NECK, NY 11021</p>
+</div>
+
+<div class="brief-note">
+<p>Please note: The address is for mailing correspondence through postal mail. Walk-ins will not be seen at this location.</p>
+</div>
+
+<div class="common-issues">
+<h3><b>COMMON REASONS FOR DISPUTING A TICKET</b></h3>
+
+<h4>Vehicle or plates was stolen, lost, sold, transferred vehicle defense</h4>
+
+<p class="enclose-copy">Enclose a copy of either 1) the Police Stolen Vehicle Report or the Police Stolen/Lost Plate(s) Report obtainable at the police precinct where the theft/loss was reported, or 2) provide proff of sale<br />
+including name and address of the new owner and (if applicable),<br />
+proof of insurance cancellation or transfer for that vehicle or proof of plate surrender. (Voluntary Surrender of Plate(s) Report can be<br />
+obtained from your local DMV). NOTE: If you are submitting either of<br />
+the police reports or proof of sale to support your claim, then ONLY<br />
+the violations listed on the notice issued on or after the date you<br />
+made the official report or sold your vehicle may be dismissed. If a ,<br />
+violation was issued PRIOR to the report date and you are<br />
+disclaiming responsibility, then we require a fully detailed statement<br />
+plus the subsequent police report(s), as well as proof of insurance<br />
+cancellation when applicable.</p>
+
+<h4>My vehicle but I was not the driver</h4>
+
+<p class="enclose-copy">Please note, the vehicle identified bears a license plate registered or leased in your name. All registered ownsers are legally responsible<br />
+for this violation. Points will not be assessed agaist the registered<br />
+owner or the designated driver for this violation.</p>
+
+<h4>Death of the registrant</h4>
+
+<p class="enclose-copy">The death of the registrant prior to or within 90 days of the issuance of the ticket is a total defense to any ticket. You will need to submit the death certificate as proof.</p>
+
+<h4>Repeat violations</h4>
+
+<p class="enclose-copy padding-bottom-100">This defense may be available to dismiss a duplicate ticket if the duplicate ticket was issued on the same day, for the same violation, at the same location, within three hours of this first ticket. You can receive a similar ticket every three hours.</p>
+</div>
+</div>
+<!--main-body-class-reqest-in person--></div>
+<!--End of panel body--></div>
+</div>
+</div>
+</div>
+<!--End of request-in-person-hearing-->
+
+<div class="panel-group">
+<div class="faqs">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><span>Frequently asked questions</span> <a data-toggle="collapse" href="#faqs-body">OPEN</a></h4>
+</div>
+
+<div class="panel-collapse collapse" id="faqs-body">
+<div class="panel-body">Panel Body</div>
+</div>
+</div>
+</div>
+</div>
+<!--End of faqs--></div>
+<!--End of container--><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script><script>
+
+$('.panel-collapse').on('shown.bs.collapse',function(){
+	    	//$(this).text('CLOSE');
+	    	$(".panel-collapse").removeClass('in');
+	    	$( this ).addClass('in');
+	    	$('.panel-title a').text('OPEN');
+	    	$( this ).parent('.panel-default').find('.panel-title a').text('CLOSE');
+		});
+		$('.panel-collapse').on('hidden.bs.collapse',function(){
+		    //$('#panelbtn').text('OPEN');
+		    $( this ).parent('.panel-default').find('.panel-title a').text('OPEN');
+	    });
+
+
+ $('.text').on('keyup', function() {
+  var card_number = $(this).val().split(" ").join("");
+  if (card_number.length > 0) {
+    card_number = card_number.match(new RegExp('.{1,4}', 'g')).join(" ");
+  }
+  $(this).val(card_number);
+});  
+
+
+$('.panel-heading').click(function() {
+$('.panel-heading').removeClass('active');
+$(this).addClass('active');
+$('.question').removeClass('active');
+$(this).addClass('active');
+});
+
+
+$(function(){
+  var hash = window.location.hash;
+  hash && $('ul.nav a[href="' + hash + '"]').collapse('show');
+  $('.panel-heading a').click(function (e) {
+    $(this).collapse('show');
+    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+    window.location.hash = this.hash;
+    $('html,body').scrollTop(scrollmem);
+  });
+});
+
+</script></body>
+</html>
